@@ -54,5 +54,45 @@ const questions = [
     reponseC: "Plus de 70",
     reponseD: "Plus de 150",
     bonneReponse: "reponseC"
+  },
+  {
+    question: "Quel philosophe français a dénoncé la torture dans ses écrits sur la guerre d'Algérie ?",
+    reponseA: "Michel Foucault",
+    reponseB: "Jean-Paul Sartre",
+    reponseC: "Albert Camus",
+    reponseD: "Jacques Derrida",
+    bonneReponse: "reponseB"
+  },
+  {
+    question: "Quel pays a été condamné par la Cour européenne des droits de l'homme en 1978 pour traitements inhumains infligés à des prisonniers en Irlande du Nord ?",
+    reponseA: "La France",
+    reponseB: "L'Espagne",
+    reponseC: "Le Royaume-Uni",
+    reponseD: "L'Italie",
+    bonneReponse: "reponseC"
+  },
+  {
+    question: "Quel est l'objectif principal du Protocole d'Istanbul ?",
+    reponseA: "Prévoir l'usage légitime de la force",
+    reponseB: "Encadrer les interrogatoires dans les zones de guerre",
+    reponseC: "Former les agents de police à la détection du mensonge",
+    reponseD: "Documenter et enquêter sur les cas de torture",
+    bonneReponse: "reponseD"
+  },
+  {
+    question: "Quel instrument de torture médiéval était surnommé « la vierge de fer » ?",
+    reponseA: "Une ceinture de contention",
+    reponseB: "Un sarcophage hérissé de pointes",
+    reponseC: "Un banc d'étirement",
+    reponseD: "Un collier de fer chauffé",
+    bonneReponse: "reponseB"
+  },
+  {
+    question: "Quel pays a adopté en 2005 le McCain Amendment interdisant la torture par ses forces armées ?",
+    reponseA: "Le Canada",
+    reponseB: "Les États-Unis",
+    reponseC: "Le Royaume-Uni",
+    reponseD: "L'Australie",
+    bonneReponse: "reponseB"
   }
 ];
