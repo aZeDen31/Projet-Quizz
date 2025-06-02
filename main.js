@@ -104,5 +104,3 @@ function randomQuestionDisplay(){
     alert(questions[n].question)
 }
 
-randomQuestionDisplay();
-
