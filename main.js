@@ -96,3 +96,13 @@ const questions = [
     bonneReponse: "reponseB"
   }
 ];
+
+
+function randomQuestionDisplay(){
+    let n;
+    n = Math.floor(Math.random() * questions.length)
+    alert(questions[n].question)
+}
+
+randomQuestionDisplay();
+
