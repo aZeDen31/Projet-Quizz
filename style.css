@@ -1,3 +1,30 @@
 body{
     background: #FDB0AA;
 }
+
+.grille {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+.grille button {
+    padding: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 0;
+}
+
+.textBoutonQuestion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#questionText{
+    color:rgb(119, 119, 119);
+}

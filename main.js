@@ -100,7 +100,17 @@ const questions = [
 
 function randomQuestionDisplay(){
     let n;
-    n = Math.floor(Math.random() * questions.length)
-    alert(questions[n].question)
+    let selectedQuestion = questions[Math.floor(Math.random() * questions.length)]
+    let boutons = document.querySelectorAll("button");
+    let valeurs = Object.values(selectedQuestion);
+    let texte = document.getElementById("questionText");
+    texte.innerText = selectedQuestion["question"];
+    let i = 1;
+    boutons.forEach(bouton => {
+        bouton.innerText = valeurs[i];
+        i++;
+    });
 }
+
+randomQuestionDisplay();
 
