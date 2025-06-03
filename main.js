@@ -7,6 +7,9 @@ let cntJ1 = 0;
 let cntJ2 = 0;
 let cntGlobal = 0;
 let joueur1 = true;
+localStorage.setItem('gagnant', "");
+
+let test = 0;
 
 boutons.forEach(bouton => {
 	bouton.addEventListener("click", () => reponseQuestion(bouton));
@@ -56,6 +59,20 @@ function reponseQuestion(bouton) {
 		joueur1 = !joueur1
 		randomQuestionDisplay();
 	}
-}
 
+	/*if(cntGlobal == 10){
+		cntJ1 > cntJ2 ? localStorage.setItem('gagnant', "Joueur 1") : cntJ1 < cntJ2 ? localStorage.setItem('gagnant', "Joueur 2") : localStorage.setItem("gagnant", "Egalité");
+	}*/
+
+	if (cntGlobal == 10) {
+		if (cntJ1 > cntJ2) {
+			localStorage.setItem('gagnant', "Joueur 1");
+		} else if (cntJ1 < cntJ2) {
+			localStorage.setItem('gagnant', "Joueur 2");
+		} else {
+			localStorage.setItem('gagnant', "Egalité");
+		}
+	}
+}
 randomQuestionDisplay();
+
