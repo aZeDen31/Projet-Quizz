@@ -7,7 +7,7 @@ let cntJ1 = 0;
 let cntJ2 = 0;
 let cntGlobal = 0;
 let joueur1 = true;
-localStorage.setItem('gagnant', "");
+sessionStorage.setItem('gagnant', "");
 
 let test = 0;
 
@@ -61,16 +61,16 @@ function reponseQuestion(bouton) {
 	}
 
 	/*if(cntGlobal == 10){
-		cntJ1 > cntJ2 ? localStorage.setItem('gagnant', "Joueur 1") : cntJ1 < cntJ2 ? localStorage.setItem('gagnant', "Joueur 2") : localStorage.setItem("gagnant", "Egalité");
+		cntJ1 > cntJ2 ? sessionStorage.setItem('gagnant', "Joueur 1") : cntJ1 < cntJ2 ? sessionStorage.setItem('gagnant', "Joueur 2") : sessionStorage.setItem("gagnant", "Egalité");
 	}*/
 
 	if (cntGlobal == 10) {
 		if (cntJ1 > cntJ2) {
-			localStorage.setItem('gagnant', "Joueur 1");
+			sessionStorage.setItem('gagnant', "Joueur 1");
 		} else if (cntJ1 < cntJ2) {
-			localStorage.setItem('gagnant', "Joueur 2");
+			sessionStorage.setItem('gagnant', "Joueur 2");
 		} else {
-			localStorage.setItem('gagnant', "Egalité");
+			sessionStorage.setItem('gagnant', "Egalité");
 		}
 	}
 }
