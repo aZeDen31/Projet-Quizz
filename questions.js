@@ -89,10 +89,10 @@ export const questions = [
   },
   {
     question: "Quel pays a adopté en 2005 le McCain Amendment interdisant la torture par ses forces armées ?",
-    reponseA: "Le Canada",
-    reponseB: "Les États-Unis",
+    reponseA: "Les États-Unis",
+    reponseB: "Le Canada",
     reponseC: "Le Royaume-Uni",
     reponseD: "L'Australie",
-    bonneReponse: "reponseB"
+    bonneReponse: "reponseA"
   }
 ];

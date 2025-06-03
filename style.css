@@ -12,7 +12,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    max-width: 600px;
+    width: 600px;
     margin: 50px auto;
 }
 
@@ -27,6 +27,7 @@ body{
 .grille button:hover{
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
+    transform: scale(1.05);
 }
 
 .grille button:active{
@@ -42,5 +43,20 @@ body{
 
 #questionText{
     /*color:rgb(119, 119, 119);*/
-    color: #000;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1000px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.grille{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
