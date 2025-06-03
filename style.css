@@ -60,3 +60,27 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.scoreJoueurs{
+    color: white;
+}
+
+.scoreJoueurs p{
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    max-width: 1000px;
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 20px;
+}
+
+#scoreJ1{
+    left: 25%;
+}
+
+#scoreJ2{
+    left: 75%;
+}
