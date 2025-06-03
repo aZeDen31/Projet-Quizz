@@ -7,7 +7,7 @@ let cntJ1 = 0;
 let cntJ2 = 0;
 let cntGlobal = 0;
 let joueur1 = true;
-sessionStorage.setItem('gagnant', "");
+localStorage.setItem('gagnant', "Blabla");
 
 let test = 0;
 
@@ -61,18 +61,36 @@ function reponseQuestion(bouton) {
 	}
 
 	/*if(cntGlobal == 10){
-		cntJ1 > cntJ2 ? sessionStorage.setItem('gagnant', "Joueur 1") : cntJ1 < cntJ2 ? sessionStorage.setItem('gagnant', "Joueur 2") : sessionStorage.setItem("gagnant", "Egalité");
+		cntJ1 > cntJ2 ? localStorage.setItem('gagnant', "Joueur 1") : cntJ1 < cntJ2 ? localStorage.setItem('gagnant', "Joueur 2") : localStorage.setItem("gagnant", "Egalité");
 	}*/
 
 	if (cntGlobal == 10) {
 		if (cntJ1 > cntJ2) {
-			sessionStorage.setItem('gagnant', "Joueur 1");
+			localStorage.setItem('gagnant', "Joueur 1");
+			console.log(localStorage.getItem('gagnant'))
 		} else if (cntJ1 < cntJ2) {
-			sessionStorage.setItem('gagnant', "Joueur 2");
+			localStorage.setItem('gagnant', "Joueur 2");
+			console.log(localStorage.getItem('gagnant'))
 		} else {
-			sessionStorage.setItem('gagnant', "Egalité");
+			localStorage.setItem('gagnant', "Egalité");
+			console.log(localStorage.getItem('gagnant'))
 		}
+		setTimeout(() => {
+			window.location.href = "end.html";
+		}, 10000);
 	}
 }
-randomQuestionDisplay();
 
+if (window.location.pathname.endsWith("quizz.html")) {
+	randomQuestionDisplay();
+}
+
+function maFonctionPourQuizz() {
+    console.log(localStorage.getItem('gagnant'));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.pathname.endsWith("end.html")) {
+        maFonctionPourQuizz();
+    }
+});
