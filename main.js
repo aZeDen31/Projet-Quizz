@@ -59,10 +59,6 @@ function reponseQuestion(bouton) {
 		randomQuestionDisplay();
 	}
 
-	/*if(cntGlobal == 10){
-		cntJ1 > cntJ2 ? sessionStorage.setItem('gagnant', "Joueur 1") : cntJ1 < cntJ2 ? sessionStorage.setItem('gagnant', "Joueur 2") : sessionStorage.setItem("gagnant", "Egalité");
-	}*/
-
 	if (cntGlobal == 10) {
         sessionStorage.setItem('gagnant', "Blabla");
 		if (cntJ1 > cntJ2) {
