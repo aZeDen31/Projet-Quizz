@@ -64,8 +64,10 @@ function reponseQuestion(bouton) {
 		joueur1 = !joueur1
 		bouton.classList.add("mauvaiseReponse")
         setTimeout(() => {
-			randomQuestionDisplay(); // Tire une nouvelle question.
-            bouton.classList.remove("mauvaiseReponse");
+			if(cntGlobal < 10){
+				randomQuestionDisplay(); // Tire une nouvelle question.
+            	bouton.classList.remove("mauvaiseReponse");
+			}
             defWinner();
 		}, 500);
 	}
