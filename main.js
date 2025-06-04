@@ -7,7 +7,6 @@ let cntJ1 = 0;
 let cntJ2 = 0;
 let cntGlobal = 0;
 let joueur1 = true;
-localStorage.setItem('gagnant', "Blabla");
 
 let test = 0;
 
@@ -61,23 +60,22 @@ function reponseQuestion(bouton) {
 	}
 
 	/*if(cntGlobal == 10){
-		cntJ1 > cntJ2 ? localStorage.setItem('gagnant', "Joueur 1") : cntJ1 < cntJ2 ? localStorage.setItem('gagnant', "Joueur 2") : localStorage.setItem("gagnant", "Egalité");
+		cntJ1 > cntJ2 ? sessionStorage.setItem('gagnant', "Joueur 1") : cntJ1 < cntJ2 ? sessionStorage.setItem('gagnant', "Joueur 2") : sessionStorage.setItem("gagnant", "Egalité");
 	}*/
 
 	if (cntGlobal == 10) {
+        sessionStorage.setItem('gagnant', "Blabla");
 		if (cntJ1 > cntJ2) {
-			localStorage.setItem('gagnant', "Joueur 1");
-			console.log(localStorage.getItem('gagnant'))
+			sessionStorage.setItem('gagnant', "Joueur 1");
+			console.log(sessionStorage.getItem('gagnant'))
 		} else if (cntJ1 < cntJ2) {
-			localStorage.setItem('gagnant', "Joueur 2");
-			console.log(localStorage.getItem('gagnant'))
+			sessionStorage.setItem('gagnant', "Joueur 2");
+			console.log(sessionStorage.getItem('gagnant'))
 		} else {
-			localStorage.setItem('gagnant', "Egalité");
-			console.log(localStorage.getItem('gagnant'))
+			sessionStorage.setItem('gagnant', "Egalité");
+			console.log(sessionStorage.getItem('gagnant'))
 		}
-		setTimeout(() => {
-			window.location.href = "end.html";
-		}, 10000);
+		window.location.href = "end.html";
 	}
 }
 
@@ -86,7 +84,7 @@ if (window.location.pathname.endsWith("quizz.html")) {
 }
 
 function maFonctionPourQuizz() {
-    console.log(localStorage.getItem('gagnant'));
+    console.log(sessionStorage.getItem('gagnant'));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
