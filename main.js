@@ -52,13 +52,31 @@ function reponseQuestion(bouton) {
 		joueur1 ? cntJ1++ : cntJ2++;
 		joueur1 ? scoreJ1.innerText = "Joueur 1 : " + cntJ1 : scoreJ2.innerText = "Joueur 2 : " + cntJ2 // Met à jour le texte du score en bas de la page
 		joueur1 = !joueur1
-		randomQuestionDisplay(); // Tire une nouvelle question.
+        bouton.classList.add("bonneReponse")
+        setTimeout(() => {
+			randomQuestionDisplay(); // Tire une nouvelle question.
+            bouton.classList.remove("bonneReponse")
+		}, 500);
+
+		
 	} else {
 		cntGlobal++;
 		joueur1 = !joueur1
-		randomQuestionDisplay();
+		bouton.classList.add("mauvaiseReponse")
+        setTimeout(() => {
+			randomQuestionDisplay(); // Tire une nouvelle question.
+            bouton.classList.remove("mauvaiseReponse");
+            defWinner();
+		}, 500);
 	}
+}
 
+if (window.location.pathname.endsWith("quizz.html")) {
+	randomQuestionDisplay();
+}
+
+function defWinner(){
+    // Définit le gagnant quand 10 questions ont été posées.
 	if (cntGlobal == 10) {
         sessionStorage.setItem('gagnant', "Blabla");
 		if (cntJ1 > cntJ2) {
@@ -73,14 +91,6 @@ function reponseQuestion(bouton) {
 		}
 		window.location.href = "end.html";
 	}
-}
-
-if (window.location.pathname.endsWith("quizz.html")) {
-	randomQuestionDisplay();
-}
-
-function maFonctionPourQuizz() {
-    console.log(sessionStorage.getItem('gagnant'));
 }
 
 document.addEventListener("DOMContentLoaded", () => {

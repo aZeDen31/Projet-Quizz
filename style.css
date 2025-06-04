@@ -84,3 +84,11 @@ body{
 #scoreJ2{
     left: 75%;
 }
+
+.bonneReponse{
+    background-color: rgb(44, 220, 85);
+}
+
+.mauvaiseReponse{
+    background-color: rgb(255, 0, 25);
+}
