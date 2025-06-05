@@ -1,4 +1,11 @@
-import { questions } from "./questions.js";
+let questions = [];
+fetch('./question.json')
+  .then(response => response.json())
+  .then(data => {
+    questions = data;
+    randomQuestionDisplay(); // Lance le jeu après chargement
+});
+
 
 let boutons = document.querySelectorAll("button");
 let currentQuestion;
@@ -94,6 +101,8 @@ function defWinner(){
 		window.location.href = "end.html";
 	}
 }
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     if (window.location.pathname.endsWith("end.html")) {
