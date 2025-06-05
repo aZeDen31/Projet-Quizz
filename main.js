@@ -52,7 +52,7 @@ function reponseQuestion(bouton) {
 		joueur1 ? cntJ1++ : cntJ2++;
 		joueur1 ? scoreJ1.innerText = "Joueur 1 : " + cntJ1 : scoreJ2.innerText = "Joueur 2 : " + cntJ2 // Met à jour le texte du score en bas de la page
 		joueur1 = !joueur1
-        bouton.classList.add("bonneReponse")
+        bouton.classList.add("bonneReponse");
         setTimeout(() => {
 			randomQuestionDisplay(); // Tire une nouvelle question.
             bouton.classList.remove("bonneReponse")
