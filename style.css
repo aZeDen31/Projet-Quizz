@@ -1,11 +1,21 @@
 body{
-    background: #FDB0AA;
+    background: #FDB0AA; 
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rose{
     background-image: url('img/ChatGPT_Image_2_juin_2025_a_14_30_09.webp');
     background-size: cover;         
     background-repeat: no-repeat;   
-    background-position: center;    
-    height: 100vh; 
-    font-family: Arial, Helvetica, sans-serif;
+    background-position: center;
+}
+
+.rouge{
+    background-image: url('img/fond-ecran-sang.jpg');
+    background-size: cover;         
+    background-repeat: no-repeat;   
+    background-position: center;
 }
 
 .grille {
@@ -91,4 +101,34 @@ body{
 
 .mauvaiseReponse{
     background-color: rgb(255, 0, 25);
+}
+
+.BG{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    background-color: #FDB0AA;
+    width: 100px;
+    height: 75px;
+    border: 0;
+}
+
+.BGRose {
+    top: 10%;
+    left: 79%;
+    background-color: #FDB0AA;
+}
+
+.BGRouge{
+    top: 10%;
+    left: 90%;
+    background-color: red;
+}
+
+.selected{
+    box-shadow: 0 0 0 5px aqua;
+}
+
+.notSelected{
+    box-shadow: 0 0 0 5px white;
 }

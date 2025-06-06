@@ -14,12 +14,18 @@ let cntJ1 = 0;
 let cntJ2 = 0;
 let cntGlobal = 0;
 let joueur1 = true;
+let body = document.getElementById("body");
 
 let test = 0;
 
 boutons.forEach(bouton => {
 	bouton.addEventListener("click", () => reponseQuestion(bouton));
 });
+
+document.querySelectorAll('p.BG').forEach(btn => {
+    btn.addEventListener('click', () => chgntBG(btn));
+});
+
 
 // Fonction qui choisit une question au hasard. Je cherche à savoir si n (le numéro de la question) est déjà apparu pour ne pas avoir de doublon au niveau des questions
 function pickRandomQuestion() {
@@ -102,10 +108,43 @@ function defWinner(){
 	}
 }
 
+function changementContour(boutonSelect){
+    if(boutonSelect.classList.contains("BGRouge")){
+        let el = document.getElementById("rouge");
+        let autre = document.getElementById("rose")
+        removeLastClass(el);
+        el.classList.add("selected");
+        removeLastClass(autre);
+        autre.classList.add("notSelected")
+    } else {
+        let el = document.getElementById("rose")
+        let autre = document.getElementById("rouge")
+        removeLastClass(el);
+        el.classList.add("selected")
+        removeLastClass(autre);
+        autre.classList.add("notSelected")
+    }
+}
+
+function chgntBG(boutonSelect){
+    if(boutonSelect.classList.contains("BGRouge")){
+        body.className = "rouge"
+        sessionStorage.setItem("couleur", "rouge");
+    } else {
+        body.className = "rose";
+        sessionStorage.setItem("couleur", "rose");
+    }
+}
+
+function removeLastClass(el) {
+    el.classList.remove("selected", "notSelected");
+}
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (window.location.pathname.endsWith("end.html")) {
-        maFonctionPourQuizz();
-    }
+    const body = document.getElementById("body");
+    console.log(sessionStorage.getItem("couleur"))
+    body.className = (sessionStorage.getItem("couleur") || "rose");
 });
+
+
