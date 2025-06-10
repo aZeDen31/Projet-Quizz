@@ -1,9 +1,11 @@
+
+
 let questions = [];
 fetch('./question.json')
   .then(response => response.json())
   .then(data => {
     questions = data;
-    randomQuestionDisplay(); // Lance le jeu après chargement
+    randomQuestionDisplay();
 });
 
 
@@ -19,7 +21,9 @@ let body = document.getElementById("body");
 let test = 0;
 
 boutons.forEach(bouton => {
-	bouton.addEventListener("click", () => reponseQuestion(bouton));
+	if(bouton.classList.contains("question")){
+		bouton.addEventListener("click", () => reponseQuestion(bouton));
+	}
 });
 
 document.querySelectorAll('p.BG').forEach(btn => {
@@ -142,8 +146,7 @@ function removeLastClass(el) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const body = document.getElementById("body");
-    console.log(sessionStorage.getItem("couleur"))
+    console.log(sessionStorage.getItem("couleur"));
     body.className = (sessionStorage.getItem("couleur") || "rose");
 });
 
