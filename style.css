@@ -244,3 +244,16 @@ body {
   gap: 400px; 
   align-items: flex; 
   }
+
+  .score-message {
+  background: rgba(255, 182, 193, 0.3);
+  padding: 25px 40px;
+  border-radius: 25px;
+  max-width: 600px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 20px;
+  color: #5a2a6f;
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.3);
+  text-align: center;
+  line-height: 1.8;
+}
