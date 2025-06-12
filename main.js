@@ -1,11 +1,13 @@
-
-
 let questions = [];
 fetch('./question.json')
   .then(response => response.json())
   .then(data => {
     questions = data;
     randomQuestionDisplay();
+
+	if (window.location.pathname.endsWith("quizz.html")) {
+		randomQuestionDisplay();
+	}
 });
 
 
@@ -90,10 +92,6 @@ function reponseQuestion(bouton) {
 	}
 }
 
-if (window.location.pathname.endsWith("quizz.html")) {
-	randomQuestionDisplay();
-}
-
 function defWinner(){
     // Définit le gagnant quand 10 questions ont été posées.
 	if (cntGlobal == 10) {
@@ -144,10 +142,12 @@ function removeLastClass(el) {
     el.classList.remove("selected", "notSelected");
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
     console.log(sessionStorage.getItem("couleur"));
     body.className = (sessionStorage.getItem("couleur") || "rose");
 });
 
+if (window.location.pathname.endsWith("end.html")) {
+	document.getElementById("testGagnant").innerText = "Gagnant : " + sessionStorage.getItem("gagnant")
+}
 
