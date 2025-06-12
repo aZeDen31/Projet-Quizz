@@ -1,14 +1,14 @@
 let questions = [];
 fetch('./question.json')
-  .then(response => response.json())
-  .then(data => {
-    questions = data;
-    randomQuestionDisplay();
-
-	if (window.location.pathname.endsWith("quizz.html")) {
+	.then(response => response.json())
+	.then(data => {
+		questions = data;
 		randomQuestionDisplay();
-	}
-});
+
+		if (window.location.pathname.endsWith("quizz.html")) {
+			randomQuestionDisplay();
+		}
+	});
 
 
 let boutons = document.querySelectorAll("button");
@@ -23,13 +23,13 @@ let body = document.getElementById("body");
 let test = 0;
 
 boutons.forEach(bouton => {
-	if(bouton.classList.contains("question")){
+	if (bouton.classList.contains("question")) {
 		bouton.addEventListener("click", () => reponseQuestion(bouton));
 	}
 });
 
 document.querySelectorAll('p.BG').forEach(btn => {
-    btn.addEventListener('click', () => chgntBG(btn));
+	btn.addEventListener('click', () => chgntBG(btn));
 });
 
 
@@ -71,31 +71,31 @@ function reponseQuestion(bouton) {
 		joueur1 ? cntJ1++ : cntJ2++;
 		joueur1 ? scoreJ1.innerText = "Joueur 1 : " + cntJ1 : scoreJ2.innerText = "Joueur 2 : " + cntJ2 // Met à jour le texte du score en bas de la page
 		joueur1 = !joueur1
-        bouton.classList.add("bonneReponse");
-        setTimeout(() => {
+		bouton.classList.add("bonneReponse");
+		setTimeout(() => {
 			randomQuestionDisplay(); // Tire une nouvelle question.
-            bouton.classList.remove("bonneReponse")
+			bouton.classList.remove("bonneReponse")
 		}, 500);
 
-		
+
 	} else {
 		cntGlobal++;
 		joueur1 = !joueur1
 		bouton.classList.add("mauvaiseReponse")
-        setTimeout(() => {
-			if(cntGlobal < 10){
+		setTimeout(() => {
+			if (cntGlobal < 10) {
 				randomQuestionDisplay(); // Tire une nouvelle question.
-            	bouton.classList.remove("mauvaiseReponse");
+				bouton.classList.remove("mauvaiseReponse");
 			}
-            defWinner();
+			defWinner();
 		}, 500);
 	}
 }
 
-function defWinner(){
-    // Définit le gagnant quand 10 questions ont été posées.
+function defWinner() {
+	// Définit le gagnant quand 10 questions ont été posées.
 	if (cntGlobal == 10) {
-        sessionStorage.setItem('gagnant', "Blabla");
+		sessionStorage.setItem('gagnant', "Blabla");
 		if (cntJ1 > cntJ2) {
 			sessionStorage.setItem('gagnant', "Joueur 1");
 			console.log(sessionStorage.getItem('gagnant'))
@@ -110,41 +110,41 @@ function defWinner(){
 	}
 }
 
-function changementContour(boutonSelect){
-    if(boutonSelect.classList.contains("BGRouge")){
-        let el = document.getElementById("rouge");
-        let autre = document.getElementById("rose")
-        removeLastClass(el);
-        el.classList.add("selected");
-        removeLastClass(autre);
-        autre.classList.add("notSelected")
-    } else {
-        let el = document.getElementById("rose")
-        let autre = document.getElementById("rouge")
-        removeLastClass(el);
-        el.classList.add("selected")
-        removeLastClass(autre);
-        autre.classList.add("notSelected")
-    }
+function changementContour(boutonSelect) {
+	if (boutonSelect.classList.contains("BGRouge")) {
+		let el = document.getElementById("rouge");
+		let autre = document.getElementById("rose")
+		removeLastClass(el);
+		el.classList.add("selected");
+		removeLastClass(autre);
+		autre.classList.add("notSelected")
+	} else {
+		let el = document.getElementById("rose")
+		let autre = document.getElementById("rouge")
+		removeLastClass(el);
+		el.classList.add("selected")
+		removeLastClass(autre);
+		autre.classList.add("notSelected")
+	}
 }
 
-function chgntBG(boutonSelect){
-    if(boutonSelect.classList.contains("BGRouge")){
-        body.className = "rouge"
-        sessionStorage.setItem("couleur", "rouge");
-    } else {
-        body.className = "rose";
-        sessionStorage.setItem("couleur", "rose");
-    }
+function chgntBG(boutonSelect) {
+	if (boutonSelect.classList.contains("BGRouge")) {
+		body.className = "rouge"
+		sessionStorage.setItem("couleur", "rouge");
+	} else {
+		body.className = "rose";
+		sessionStorage.setItem("couleur", "rose");
+	}
 }
 
 function removeLastClass(el) {
-    el.classList.remove("selected", "notSelected");
+	el.classList.remove("selected", "notSelected");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log(sessionStorage.getItem("couleur"));
-    body.className = (sessionStorage.getItem("couleur") || "rose");
+	console.log(sessionStorage.getItem("couleur"));
+	body.className = (sessionStorage.getItem("couleur") || "rose");
 });
 
 if (window.location.pathname.endsWith("end.html")) {
