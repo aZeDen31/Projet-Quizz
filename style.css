@@ -96,11 +96,11 @@ body {
 }
 
 .bonneReponse {
-  background: rgb(44, 220, 85);
+  background: rgb(44, 220, 85) !important;
 }
 
 .mauvaiseReponse {
-  background: rgb(255, 0, 25);
+  background: rgb(255, 0, 25) !important;
 }
 
 .BG {
@@ -232,6 +232,7 @@ body {
   text-align: left;
   line-height: 1.6;
   margin-bottom: 40px;
+  font-weight: bold;
 }
 
 .rules-text ul {
@@ -246,6 +247,6 @@ body {
 .buttons-container {
   display: flex;
   flex-direction: column;
-  gap: 400px; 
+  gap: 70px;
   align-items: flex; 
   }
