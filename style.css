@@ -149,14 +149,29 @@ body {
 }
 
 @keyframes dreamyGlow {
-  0% { text-shadow: 0 0 8px #d8baff, 0 0 12px #add8e6; }
-  50% { text-shadow: 0 0 14px #b57edc, 0 0 22px #e0ffff; }
-  100% { text-shadow: 0 0 8px #d8baff, 0 0 12px #add8e6; }
+  0% {
+    text-shadow: 0 0 8px #d8baff, 0 0 12px #add8e6;
+  }
+
+  50% {
+    text-shadow: 0 0 14px #b57edc, 0 0 22px #e0ffff;
+  }
+
+  100% {
+    text-shadow: 0 0 8px #d8baff, 0 0 12px #add8e6;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .regle {
@@ -171,7 +186,8 @@ body {
   margin-left: 30%;
 }
 
-.commencer-button, .regle-button {
+.commencer-button,
+.regle-button {
   background: linear-gradient(to bottom right, #ffb6c1, #ff69b4);
   color: white;
   padding: 18px 36px;
@@ -186,13 +202,15 @@ body {
   font-family: sans-serif;
 }
 
-.commencer-button:hover, .regle-button:hover {
+.commencer-button:hover,
+.regle-button:hover {
   background: linear-gradient(to bottom right, #ffc0cb, #ff1493);
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(255, 105, 180, 0.5);
 }
 
-.commencer-button::after, .regle-button::after {
+.commencer-button::after,
+.regle-button::after {
   content: "\2728";
   position: absolute;
   top: -10px;
@@ -221,13 +239,13 @@ body {
 }
 
 .rules-text {
-  background: rgba(255, 182, 193, 0.3); 
+  background: rgba(255, 182, 193, 0.3);
   padding: 25px 40px;
   border-radius: 25px;
   max-width: 600px;
   font-family: sans-serif;
   font-size: 18px;
-  color: #5a2a6f; 
+  color: #5a2a6f;
   box-shadow: 0 6px 15px rgba(255, 105, 180, 0.3);
   text-align: left;
   line-height: 1.6;
@@ -248,5 +266,5 @@ body {
   display: flex;
   flex-direction: column;
   gap: 70px;
-  align-items: flex; 
-  }
+  align-items: flex;
+}
