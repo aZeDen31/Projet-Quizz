@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 if (window.location.pathname.endsWith("end.html")) {
 	if(sessionStorage.getItem("gagnant") != "Egalité"){
-		document.getElementById("texte-gagnant").innerText = "Le vainqueur est : 🎉 " + sessionStorage.getItem("gagnant") + " 🎉"
+		document.getElementById("texte-gagnant").innerText = "Le vainqueur est le 🎉 " + sessionStorage.getItem("gagnant") + " 🎉"
 	} else {
 		document.getElementById("texte-gagnant").innerText = "Les deux joueurs ont obtenu une égalité !"
 	}
