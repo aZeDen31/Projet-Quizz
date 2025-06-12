@@ -148,6 +148,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 if (window.location.pathname.endsWith("end.html")) {
-	document.getElementById("testGagnant").innerText = "Gagnant : " + sessionStorage.getItem("gagnant")
+	if(sessionStorage.getItem("gagnant") != "Egalité"){
+		document.getElementById("texte-gagnant").innerText = "Le vainqueur est : 🎉 " + sessionStorage.getItem("gagnant") + " 🎉"
+	} else {
+		document.getElementById("texte-gagnant").innerText = "Les deux joueurs ont obtenu une égalité !"
+	}
 }
 

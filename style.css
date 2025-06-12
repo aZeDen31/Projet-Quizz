@@ -270,7 +270,7 @@ body {
 }
 
 
-  .score-message {
+.score-message {
   background: rgba(255, 182, 193, 0.3);
   padding: 25px 40px;
   border-radius: 25px;
@@ -281,4 +281,9 @@ body {
   box-shadow: 0 6px 15px rgba(255, 105, 180, 0.3);
   text-align: center;
   line-height: 1.8;
+  font-weight: bold;
+}
+
+#endButtons{
+  gap: 40px !important;
 }
