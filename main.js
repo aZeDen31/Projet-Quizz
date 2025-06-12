@@ -59,6 +59,7 @@ export function randomQuestionDisplay() {
 		bouton.classList.add(cles[i]);
 		i++;
 	});
+	defWinner();
 }
 
 // Fonction simple qui vérifie si le bouton sur lequel on clique est la bonne réponse
